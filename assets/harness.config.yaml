@@ -1,0 +1,31 @@
+# Anchor per-project configuration. Copy this into your project root.
+harness_version: 0.1
+
+history:
+  backend: files        # default. 'git' = opt-in (commit once per run). Files need no manual step.
+  retain: 20            # keep the last N runs; older run folders auto-pruned
+
+run:
+  validate_before_run: true
+  dry_run_default: false
+  audit: full           # full | light | none. Default full (trail + rollback + resume).
+                        #   light = keep resume + minimal record, skip snapshots
+                        #   none  = no trail, no resume, purged at end (fastest/cheapest)
+                        # Override per workflow (front-matter `audit:`) or run (`--audit none`).
+  limits: {max_nodes: 50, max_minutes: 30}   # runaway backstop; remove for no limit
+
+# Source credibility registry. Tier 1 = most authoritative. `key` lists the join
+# columns used when a node merges this source with another.
+sources:
+  snowflake_prod: {tier: 1, key: [date, metric]}
+  finance_export: {tier: 2, key: [date, metric]}
+  slack_reports:  {tier: 3, key: [date, metric]}
+
+conflict_policy: prefer_higher_tier   # else: flag_for_review
+
+notify:
+  on: [failure, completion, gate-halt]
+  to: slack:#my-runs                  # or an email address
+
+# NOTE: sources authenticate through your connected tools (Cowork/MCP connectors or
+# CLI environment). This file stores only credibility metadata — never secrets.
