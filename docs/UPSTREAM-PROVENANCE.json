@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-29",
+  "note": "Owner-authorized public extraction. Generic source and synthetic tests only; no application state. Paths identify local source lineage, not runtime dependencies.",
+  "files": [
+    {
+      "source": "tracker-framework-v2/packages/anchor/src/tracker_v2_anchor/cohorts.py",
+      "sha256": "387716d309bfaadfd1af67cb2d7fb02eadc0be6db6c90ff1745c422fced8987b"
+    },
+    {
+      "source": "tracker-framework-v2/packages/anchor/src/tracker_v2_anchor/compiler.py",
+      "sha256": "3c5969e765885e2f1821d2902349d83f7e8690669983322931a9fe1677750718"
+    },
+    {
+      "source": "tracker-framework-v2/packages/anchor/src/tracker_v2_anchor/models.py",
+      "sha256": "15c5001a5083fd8e48a59e0c476da33e55e5a36cc240f656ee9ba5174b4b90ed"
+    },
+    {
+      "source": "tracker-framework-v2/packages/anchor/src/tracker_v2_anchor/__init__.py",
+      "sha256": "9adb6fb1a3f1d47054f62973ac8ed8014703e2980a3868819998d1f4762937c8"
+    },
+    {
+      "source": "tracker-framework-v2/packages/anchor/src/tracker_v2_anchor/errors.py",
+      "sha256": "f4b79da941248a48bd9ddfce18e64a124996a2ab9731475879f0e6f29ff387f5"
+    },
+    {
+      "source": "tracker-framework-v2/packages/anchor/src/tracker_v2_anchor/validation.py",
+      "sha256": "8dc0a68e39fe50375a92135b5e19dba85727411a29183a619f403aab1db4c77d"
+    },
+    {
+      "source": "tracker-framework-v2/contracts/src/tracker_v2_contracts/models.py",
+      "sha256": "fd09d926c4f55ec7466842f9b3673a73c8d1013725f296bdfb72fd961a47ac79"
+    },
+    {
+      "source": "tracker-framework-v2/contracts/src/tracker_v2_contracts/canonical.py",
+      "sha256": "bffe2cb1df3a38f7c62f60a84f7f08739441ed95e1b1973b546c5856e8307956"
+    },
+    {
+      "source": "tracker-framework-v2/contracts/src/tracker_v2_contracts/validation.py",
+      "sha256": "c59d23c7201db83a89ed5737243e489a450f306c60ba3a960b3a94b1cf33e4be"
+    },
+    {
+      "source": "tracker-framework-v2/packages/anchor/tests/test_anchor.py",
+      "sha256": "eb43a647c2b7b869b87a252f911cd2409c09629c57bfa494220e61853233f459"
+    },
+    {
+      "source": "tracker-framework-v3/packages/anchor-v3/src/tracker_v3_anchor/models.py",
+      "sha256": "a636ddc6cdf85b9009c39d7ba8f8eaf92f410756a98a6eecf10bc960c046c895"
+    },
+    {
+      "source": "tracker-framework-v3/packages/anchor-v3/src/tracker_v3_anchor/cohorts.py",
+      "sha256": "ac096429115b4e8b33f914ecdade1ffe5daed7549513fceaef1cb46de4f5cb39"
+    },
+    {
+      "source": "tracker-framework-v3/packages/anchor-v3/tests/test_cohorts.py",
+      "sha256": "f36c3466f15e8ea88c9220b7836804ebc2f5bacc2b0eb23747d9586f24e7439a"
+    }
+  ]
+}

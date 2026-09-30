@@ -1,0 +1,10 @@
+{
+  "workflow_id": "example.report",
+  "version": "1",
+  "nodes": [
+    {"node_id": "read", "kind": "evidence_read", "produces": ["records"]},
+    {"node_id": "render", "kind": "pure", "depends_on": ["read"], "consumes": ["records"], "produces": ["report"]},
+    {"node_id": "publish", "kind": "external_effect", "depends_on": ["render"], "consumes": ["report"], "verification_node_id": "verify", "modes": ["full", "deep"]},
+    {"node_id": "verify", "kind": "verification", "depends_on": ["publish"], "modes": ["deep"]}
+  ]
+}
