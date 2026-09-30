@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 — 2026-09-29 (local candidate)
+## 0.4.0 — 2026-09-29 (experimental prerelease)
 
 - Added a pure Python library and `anchor-plan` CLI alongside the original plugin.
 - Added deterministic DAG compilation, strict artifact contracts, required effect

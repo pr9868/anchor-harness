@@ -7,7 +7,7 @@ what, which checks are required, what can be skipped, and what must be repeated
 after a change. An agent can choose how to perform a task while the harness makes
 the workflow's structure visible and checkable.
 
-> **Status: 0.4.0 — local public candidate, work in progress.** The new pure planning
+> **Status: 0.4.0 — public experimental prerelease.** The new pure planning
 > library is opt-in and requires Python 3.11+. The original YAML workflow helper
 > and plugin remain available. MIT license. See [validation](docs/VALIDATION.md)
 > and [current boundaries](#current-boundaries).
@@ -62,10 +62,10 @@ add transactional fencing to the original helper.
 
 ## Quick start: pure planning
 
-From a checkout containing this candidate:
+Start from the versioned source checkout:
 
 ```bash
-git clone https://github.com/pr9868/anchor-harness.git
+git clone --branch v0.4.0 https://github.com/pr9868/anchor-harness.git
 cd anchor-harness
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -80,8 +80,9 @@ terminal nodes and plan digest. For the included workflow, full mode produces
 planning, bounded allocation and selective resume using synthetic inputs.
 Neither command calls a model or publishes a report.
 
-Until this candidate is published, the GitHub default branch may still contain the
-preceding version. Check `pyproject.toml` for version 0.4.0 before using this path.
+Download the wheel, source archive or `anchor.plugin` from the [0.4.0 GitHub prerelease](https://github.com/pr9868/anchor-harness/releases/tag/v0.4.0).
+The release includes SHA-256 checksums. This version is distributed through GitHub;
+these instructions do not depend on a package-index release.
 
 ### Compile from Python
 
@@ -267,7 +268,7 @@ The original helper provides a local file-based workflow protocol. It does not
 inherit SQLite durability, cross-process fencing or distributed execution from the
 new library. Neither schema is automatically converted to the other. The historical
 [design specification](docs/design-spec.md) includes deferred ideas; this README and
-[planning guide](docs/PLANNING.md) describe the current candidate.
+[planning guide](docs/PLANNING.md) describe this version.
 
 ## Validate and contribute
 
@@ -283,8 +284,8 @@ python scripts/check_plugin.py dist/anchor.plugin
 Local validation recorded **48 passing tests**, covering the original helper,
 strict compilation, declaration-order determinism, dependency cohorts, bounded
 allocation, incremental fallback and selective resume. Installed-wheel examples
-and extracted-plugin checks passed. The configured Linux/Python 3.11–3.13 GitHub
-matrix has not yet run for this candidate. See [validation evidence](docs/VALIDATION.md).
+and extracted-plugin checks passed. The Linux/Python 3.11–3.13 [GitHub CI matrix](https://github.com/pr9868/anchor-harness/actions/runs/36664843979)
+also passed. See [validation evidence](docs/VALIDATION.md).
 
 For a bug report, identify the library or helper path, provide a small synthetic
 manifest and show the expected and actual plan or state transition. Keep private
