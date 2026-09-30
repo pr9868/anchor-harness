@@ -80,3 +80,14 @@ Inspect or recover anytime: `... status <run_id>` (frontier, blocked, quarantine
 - Never claim a node passed without a successful `verify`. Never advance past an unapproved blocking gate.
 
 For the full schema (params, `when:`, `map:`, gates, verify DSL, merge) read `references/workflow-schema.md`. For dispatch and matching read `references/dispatcher.md`.
+
+## Opt-in pure planning APIs (0.4.0)
+
+For a new JSON manifest, run `scripts/anchor-plan.py <manifest.json> --mode full`
+from this skill directory using Python 3.11+. It validates and prints a plan only.
+The adjacent `scripts/anchor_harness` library supplies incremental planning, bounded
+work batches and selective resume. See the plugin's `docs/PLANNING.md`.
+Do not feed these manifests into the legacy YAML runner, treat plans as completion
+evidence, or claim that pure planning gives the legacy runner durable fencing.
+The host verifies cached outputs and sealed responses and owns execution; a runtime
+such as Ratchet owns durable effect recovery and commits.

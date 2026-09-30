@@ -15,3 +15,8 @@ workflows/index.yaml
 *.swp
 .idea/
 .vscode/
+
+# Build and test products
+build/
+dist/
+.pytest_cache/

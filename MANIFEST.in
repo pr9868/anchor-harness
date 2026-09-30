@@ -1,0 +1,9 @@
+include AGENTS.md CHANGELOG.md
+recursive-include .claude-plugin *.json
+recursive-include assets *.md *.yaml
+recursive-include docs *.md *.json
+recursive-include tests *.py
+recursive-include examples *.py *.json
+recursive-include scripts *.py
+recursive-include skills *.py *.md *.yaml
+global-exclude *.pyc

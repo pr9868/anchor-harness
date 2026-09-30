@@ -1,9 +1,16 @@
 {
   "name": "anchor",
-  "version": "0.3.1",
-  "description": "Anchor — a deterministic-enough harness for agentic workflows. Routes requests (free / assisted / rails), runs declared DAG workflows with per-node verify, human gates, source-credibility merge, run parameters, conditionals, and a flat-file audit trail.",
+  "version": "0.4.0",
+  "description": "Anchor \u2014 a deterministic-enough harness for agentic workflows. Routes requests (free / assisted / rails), runs declared DAG workflows with per-node verify, human gates, source-credibility merge, run parameters, conditionals, and a flat-file audit trail.",
   "author": {
     "name": "Pradeep"
   },
-  "keywords": ["orchestration", "workflow", "dag", "guardrails", "determinism", "harness"]
+  "keywords": [
+    "orchestration",
+    "workflow",
+    "dag",
+    "guardrails",
+    "determinism",
+    "harness"
+  ]
 }

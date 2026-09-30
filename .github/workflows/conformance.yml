@@ -1,0 +1,25 @@
+name: public-release-checks
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install pytest PyYAML build
+      - run: python -B -m pytest -q
+      - run: python -m build
+      - run: python -m pip install dist/*.whl
+      - run: python -c "import anchor_harness; assert anchor_harness.__version__ == '0.4.0'"
+      - run: anchor-plan examples/workflow.json --mode full
+      - run: python examples/planning.py
+      - run: python scripts/build_plugin.py
+      - run: python scripts/check_plugin.py dist/anchor.plugin
+      - run: python scripts/check_release.py
